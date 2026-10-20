@@ -1,0 +1,125 @@
+/* Pfotenpost – Linkseite. Keine externen Dateien, keine Cookies. Schrift: Fredoka (SIL OFL 1.1) */
+@font-face {
+  font-family: "Fredoka";
+  src: url("fredoka.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root {
+  --tuerkis: #5f9fa0;
+  --tuerkis-dunkel: #2f6667;
+  --orange: #e8913a;
+  --creme: #fbf7f0;
+  --text: #1f3535;
+  --text-leise: #5b6e6e;
+  --karte: #ffffff;
+  --rand: #dbe7e6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --creme: #142424;
+    --text: #eef5f4;
+    --text-leise: #a8bcbb;
+    --karte: #1d3333;
+    --rand: #2c4a4a;
+    --tuerkis-dunkel: #8cc7c7;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--text);
+  font-family: "Fredoka", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.kopf {
+  background: var(--tuerkis);
+  height: 120px;
+}
+
+main {
+  max-width: 560px;
+  margin: -70px auto 0;
+  padding: 0 16px 48px;
+}
+
+.profil { text-align: center; }
+
+.profil img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid var(--creme);
+  object-fit: cover;
+  background: var(--tuerkis);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin: 8px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.unterzeile {
+  margin: 0 0 28px;
+  color: var(--text-leise);
+  font-size: 1.15rem;
+}
+
+.knopf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  margin: 0 0 12px;
+  border-radius: 999px;
+  background: var(--karte);
+  border: 2px solid var(--rand);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.knopf:hover, .knopf:focus-visible { transform: translateY(-2px); border-color: var(--tuerkis); }
+.knopf.haupt { background: var(--tuerkis); border-color: var(--tuerkis); color: #fff; }
+.knopf svg { width: 22px; height: 22px; flex: none; }
+
+.karte {
+  background: var(--karte);
+  border: 2px solid var(--rand);
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin: 24px 0 0;
+}
+
+.karte h2 { margin: 0 0 6px; font-size: 1.2rem; font-weight: 600; color: var(--tuerkis-dunkel); }
+.karte p { margin: 0 0 8px; }
+.karte p:last-child { margin-bottom: 0; }
+
+.text h1 { font-size: 2rem; margin-top: 0; }
+.text h2 { font-size: 1.25rem; font-weight: 600; margin: 28px 0 6px; color: var(--tuerkis-dunkel); }
+.text main { margin-top: 0; padding-top: 24px; }
+.text .kopf { height: 56px; }
+.zurueck { display: inline-block; margin: 0 0 16px; color: var(--tuerkis-dunkel); }
+
+a { color: var(--tuerkis-dunkel); }
+
+footer {
+  text-align: center;
+  color: var(--text-leise);
+  font-size: 0.95rem;
+  padding: 24px 16px 40px;
+}
+
+footer a { color: var(--text-leise); margin: 0 8px; }
